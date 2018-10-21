@@ -1,3 +1,76 @@
+### TODO
+1.  Did you use React Create App to create your program files?   
+If so, you do NOT need to do anything to the service worker file it creates  -- just add error handing (see more below)
+
+2.  Did you use react-google-maps for the map?   
+Reason I ask is that Forrest's tutorials and many people used it, so will have more resources to answer questions if you do   
+(I started using basic JavaScript and could not get the Markers and InfoWindows working)
+
+3.  Did you sketch out your page layout and think a bit about responsive ahead of time?  
+Web Foundations -> Lesson 14 Common Responsive Patterns --> Column Drop
+
+4.  Given your sketch, how many components do you envision needing?  
+(let's discuss keeping all the mapping stuff in one component vs. multiple)
+
+5.  Given React rule #1, setState at the highest level, where should all the functions to manipulate and reset data be?
+(Note:  my final answer to this, after two massive refactors, is DIFFERENT than some of Forrest's later videos per coaching from Doug Brown.)  
+Let's discuss where the code you have completed to render map is living right now.  
+
+6.  What API are you planning?  
+Given it's use again by the majority of classmates, I suggest FourSquare to get most help
+
+7.  Speaking of data, my iteration one started with an array of my favorite places for my map which I wanted to use FourSquare to get more data for. Don't do that.   Follow Forrest's videos to make two API calls.   
+
+8.  The two API calls send back different data and tricky part is how to merge.   Console.log the API returned and dig into it to understand the delta.   It's worth the hour investment to look at the data from each of the two calls in-depth and keep some screen shots of it in another place so if API fails, you have the field matrix.   Also look across venue to venue and check to see the data you want to use for Infowindow is present (more below).
+
+9.  Joining data in React was a rathole challenge for me.   Research Object.assign in MDN to save your sanity. If you spend too much time merging data, let's do a detailed session.   I wasted at least 30 hours on that.
+
+10.  When using API, you do not need to get 10 locations each time.   Modulate the query number up and down to save your API hits as they are limited.  (I actually forgot to increase to 10 for my submission and they did not ding me).
+
+11.   InfoWindows (pop when click) were also a rat hole for me.   
+Two suggestions:
+a.  Keep the data you present to a minimum
+(e.g. I did not do a photo (as have to size them, and abandoned including a URL as could not figure out how to address when url data was not listed for a location)
+b.  formatting content -- don't get fancy in render, use <p> and style font sizes and bold in css
+
+12.  Animation was tricky in react, when you get there, let's specifically look at that together.  as it took me so long to figure this out (had to actually look at someone's code as docs kind of suck), I simply made the marker bounce on click.  It keeps clicking as did not want to invest time working a timeout.  I went super basic and it passed. I don't like my implementation, so will fix later.  definitely not production ready.   A number of people, including Amy, changed the color on click.  If that makes more sense to you on how to do, suggest doing it.   I struggled to figure out how to apply a different className on click.   
+
+13.  After we talk about your page layout design, let's talk side panel and what are sub-elements it is composed of.   More resources to follow here, but I want you to think before i provide them
+
+14.  Side panel requires a responsive design decision.  a few options I have seen people discuss are:  
+a.  at certain width, sidepanel automatically disappears
+b.  hamburger button to allow users to close sidepanel at whatever width they want and it remains open regardless of size
+c.  a + button to display sidepanel on click
+
+I did option a.   when I was working accessibility,  I did NOT implement a fancy tabindex sequence to prevent the screen reader from reading the sidepanel even though I shifted it offscreen.   I was concerned project  would be bounced back for that, and they did not (perhaps as I had 162 commits)   Another thing I will work to fix.  Again, keep it MVP
+
+15.   Accessibility
+The map sub-components (e.g. satellite view button) are already accessible (and many can be remove from map with some attribute settings).
+
+Tabbing to the map needs a role and aria-label added.   As I spent something like 6 hours on this and implemented a kludged solution, I will get tell you to wrapper a <div> with those attributes around the <Map > as there is no way I found to add it right to the <Map  >
+
+I added a few tabindex to make the flow of the sidepanel move correctly and stopped.  See the class on tabindex
+
+Many have tried to make the actual markers in the map accessible, but not sure anyone solved.  skip trying.
+
+I also would have liked to have had the screen reader move to reading the infowindow data when I clicked on a sidepanel option, but could not easily figure it out, submitted without and passed
+
+
+16.  Error Handling - 3x relatively things needed; one of which helps you do nothing to meet service worker requirements:
+1-2)  are .catch statements on each foursquare API call
+3) something I never would have figured out if someone had not helped: ErrorBoundary (for map): // https://reactjs.org/docs/error-boundaries.html#introducing-error-boundaries
+Good news here is that you can nearly copy and use verbatim in your program.  I make a few changes and a custom error message.   Docs are pretty good here.  
+
+Final thought for now, time is not your friend.
+Mission is to keep access to class materials for continuous learning  
+Think MVP to meet the rubric -- both functionally and styling.   Can also do more after graduate.  
+Keep it simple -- don't try to pass data between 20 different components
+If stuck for more than a few hours, ask for help
+If really stuck, look at that part of a person's code and attribute it
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
