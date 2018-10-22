@@ -32,10 +32,14 @@ class Helper {
       headers: Helper.headers()
     };
     return fetch(
-      `${Helper.baseURL()}
-      ${endPoint}?${Helper.auth()}
-      &${Helper.urlBuilder(urlPrams)}`.requestData
-    ).then(res=>res.json());
+      `${Helper.baseURL()}${endPoint}?${Helper.auth()}&${Helper.urlBuilder(urlPrams)}`,
+      requestData
+    ).then(res => res.json())
+     .then(response => {
+      console.log('Success:', response)
+    }
+)
+.catch(error => console.error('Error:', error));
   }
 }
 
