@@ -7,7 +7,7 @@ class App extends Component {
     componentDidMount() {
       SquareAPI.search({
         near:"Sequim, WA",
-        query: "EV",
+        query: "food",
         limit: 5
       }).then(results => console.log(results));
     }
