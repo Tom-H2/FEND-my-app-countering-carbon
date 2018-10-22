@@ -1,3 +1,4 @@
+//Based on Forrest video https://www.youtube.com/watch?v=Dj5hzKBxCBI&index=3&list=PL4rQq4MQP1crXuPtruu_eijgOUUXhcUCP
 class Helper {
   static baseURL() {
     return "https://api.foursquare.com/v2"
@@ -33,7 +34,8 @@ class Helper {
     return fetch(
       `${Helper.baseURL()}
       ${endPoint}?${Helper.auth()}
-      &${Helper.urlBuilder(urlPrams)}`.requestData).then(res=>res.json());
+      &${Helper.urlBuilder(urlPrams)}`.requestData
+    ).then(res=>res.json());
   }
 }
 
