@@ -20,10 +20,10 @@ class Helper {
       .map(key => `${key}=${urlPrams[key]}`)
       .join('&');
   }
-  static header() {
+  static headers() {
     return {
       Accept: "application/json"
-    }:
+    };
   }
   static simpleFetch(endPoint, method, urlPrams) {
     let requestData = {
@@ -33,9 +33,7 @@ class Helper {
     return fetch(
       `${Helper.baseURL()}
       ${endPoint}?${Helper.auth()}
-      &${Helper.urlBuilder(urlPrams)}`
-      .requestData
-    ).then(res => res.json());
+      &${Helper.urlBuilder(urlPrams)}`.requestData).then(res=>res.json());
   }
 }
 
