@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Map from './components/Map';
+import SquareAPI from './API/'
 
 class App extends Component {
+    componentDidMount() {
+      SquareAPI.search({
+        near:"Sequim, WA",
+        query: "EV",
+        limit: 5
+      }).then(results => console.log(results));
+    }
   render() {
     return (
       <div className="App">
