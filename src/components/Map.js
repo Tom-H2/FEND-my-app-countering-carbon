@@ -6,18 +6,30 @@
     </script>*/
     import React, { Component } from 'react';
 
-    import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
+    import {
+      withScriptjs,
+      withGoogleMap,
+      GoogleMap,
+      Marker,
+      InfoWindow
+    } from "react-google-maps"
 
   const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     <GoogleMap
       defaultZoom={10}
       defaultCenter={{lat: 48.100, lng: -123.000}}
     >
-      {props.isMarkerShown && <Marker position={{lat: 48.080, lng: -123.100}} />}
-      {props.isMarkerShown && <Marker position={{lat: 48.080, lng: -123.120}} />}
-      {props.isMarkerShown && <Marker position={{lat: 47.985, lng: -122.880}} />}
-      {props.isMarkerShown && <Marker position={{lat: 48.080, lng: -123.320}} />}
-      {props.isMarkerShown && <Marker position={{lat: 48.080, lng: -123.140}} />}
+      {props.isMarkerShown &&
+        <Marker
+          position={{lat: 48.080, lng: -123.100}}>
+            {/*{props.isOpen && <InfoWindow onCloseClick={props.onToggleOpen}>
+            <FaAnchor />
+          </InfoWindow>}*/}
+        </Marker>}{/*Clallam Coop*/}
+      {props.isMarkerShown && <Marker position={{lat: 48.080, lng: -123.106}} />}{/*Nocolai*/}
+      {props.isMarkerShown && <Marker position={{lat: 48.1215, lng: -123.434}} />}{/*Port Angeles*/}
+      {props.isMarkerShown && <Marker position={{lat: 48.115, lng: -123.415}} />}{/*Oly Med*/}
+      {props.isMarkerShown && <Marker position={{lat: 47.990, lng: -122.891}} />}{/*Disco Bay*/}
     </GoogleMap>
   ))
 
