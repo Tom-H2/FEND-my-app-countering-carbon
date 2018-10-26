@@ -21,11 +21,13 @@
     >
       {props.isMarkerShown &&
         <Marker
-          position={{lat: 48.080, lng: -123.100}}>
-            {/*{props.isOpen && <InfoWindow onCloseClick={props.onToggleOpen}>
-            <FaAnchor />
-          </InfoWindow>}*/}
-        </Marker>}{/*Clallam Coop*/}
+          title={'Clallam Coop'}
+          position={{lat: 48.080, lng: -123.100}}
+          onClick={() => props.handleMarkerClick(markers)}>
+            {Marker.isOpen && <InfoWindow>
+              <p>Clallam Coop</p>
+            </InfoWindow>}
+        </Marker>}
       {props.isMarkerShown && <Marker position={{lat: 48.080, lng: -123.106}} />}{/*Nocolai*/}
       {props.isMarkerShown && <Marker position={{lat: 48.1215, lng: -123.434}} />}{/*Port Angeles*/}
       {props.isMarkerShown && <Marker position={{lat: 48.115, lng: -123.415}} />}{/*Oly Med*/}
