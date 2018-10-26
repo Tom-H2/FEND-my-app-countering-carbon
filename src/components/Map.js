@@ -1,18 +1,12 @@
-/*  center: {lat: 48.100, lng: -123.000}
+import React, { Component } from 'react';
 
-    <!--TODO: Insert your API Key in the below call to load the API.-->
-    <script async defer
-     src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDeiczf4IikLo9sb8zfCtNQPHzHcakh-dg&callback=initMap">
-    </script>*/
-    import React, { Component } from 'react';
-
-    import {
-      withScriptjs,
-      withGoogleMap,
-      GoogleMap,
-      Marker,
-      InfoWindow
-    } from "react-google-maps"
+import {
+    withScriptjs,
+    withGoogleMap,
+    GoogleMap,
+    Marker,
+    InfoWindow
+} from "react-google-maps"
 
   const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     <GoogleMap
