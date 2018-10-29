@@ -17,7 +17,7 @@ import {
         <Marker
           title={'Clallam Coop'}
           position={{lat: 48.080, lng: -123.100}}
-          onClick={() => props.handleMarkerClick(markers)}>
+          onClick={() => props.handleMarkerClick(Marker)}>
             {Marker.isOpen && <InfoWindow>
               <p>Clallam Coop</p>
             </InfoWindow>}

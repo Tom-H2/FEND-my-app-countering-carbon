@@ -22,7 +22,7 @@ class App extends Component {
 
     componentDidMount() {
       SquareAPI.search({
-        near:"Sequim, WA",
+        near:"Sequim, WA", //Sequim is a placeholder but will be near marker
         query: "Coffee",
         radius: 800,
         limit: 40
