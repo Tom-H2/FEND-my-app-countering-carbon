@@ -7,7 +7,7 @@ import {
     Marker,
     InfoWindow
 } from "react-google-maps"
-
+//console.logs show information onClick of markers. InfoWindows not yet working
   const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     <GoogleMap
       defaultZoom={10}
