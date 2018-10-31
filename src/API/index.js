@@ -35,10 +35,7 @@ class Helper {
       `${Helper.baseURL()}${endPoint}?${Helper.auth()}&${Helper.urlBuilder(urlPrams)}`,
       requestData
     ).then(res => res.json())
-     .then(results => {
-      console.log('Success:', results)
-    }
-)
+     
 .catch(error => console.error('Error:', error));
   }
 }

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import './App.css';
 import Map from './components/Map';
-//import Search from './components/Search';
 import SquareAPI from './API/'
 
 class App extends Component {
@@ -38,7 +37,6 @@ class App extends Component {
             <h2>What to do while charging your EV</h2>
           <Map
           handleMarkerClick={this.handleMarkerClick}/>
-          {/*<Route exact path="/Search" render={(() => (<Search updateBooks={this.updateBooks} books={this.state.books} />))}/>*/}
       </div>
     );
   }
