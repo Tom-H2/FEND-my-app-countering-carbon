@@ -39,6 +39,15 @@ openInfoWindowOnClick = (marker) => {
   })
 }
 
+//function to open InfoWindow on click of marker--green edits
+handleMarkerClick = (marker) => {
+  this.closeOpenMarkers()
+  marker.isOpen = true;
+  marker.clickedOnMarker = true;
+  this.setState({markers: Object.assign(this.state.markers, marker)})
+  this.openInfoWindowOnClick(marker);
+}
+
 
     componentDidMount() {
       SquareAPI.search({
@@ -48,8 +57,24 @@ openInfoWindowOnClick = (marker) => {
         limit: 10
       }).then(results => {
         console.log(results);
-      });
-      };
+        const {venues} = results.response;
+        console.log(venues);
+        const markers = venues.map(venue => {
+          return {
+            lat: venue.location.lat,
+            lng: venue.location.lng,
+            id: venue.id,
+            isOpen: false,
+            clickedOnMarker: false,
+          };
+        });
+        this.setState({venues});
+        this.setState({markers});
+      })
+      .catch(error => {
+        this.setState({error});
+      })
+      }
 
   render() {
     return (
