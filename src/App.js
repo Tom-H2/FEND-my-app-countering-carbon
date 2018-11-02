@@ -40,7 +40,7 @@ openInfoWindowOnClick = (marker) => {
 }
 
 //function to open InfoWindow on click of marker--green edits
-handleMarkerClick = (marker) => {
+handleMarkerClick = (marker) => { //Code here written with help from Susan Pommer
   this.closeOpenMarkers()
   marker.isOpen = true;
   marker.clickedOnMarker = true;
@@ -52,8 +52,8 @@ handleMarkerClick = (marker) => {
     componentDidMount() {
       SquareAPI.search({
         near:"Sequim, WA", //Sequim is a placeholder but will be near marker
-        query: "Coffee",
-        radius: 800,
+        query: "coffee",
+        radius: 5000,
         limit: 10
       }).then(results => {
         console.log(results);
@@ -65,6 +65,7 @@ handleMarkerClick = (marker) => {
             lng: venue.location.lng,
             id: venue.id,
             isOpen: false,
+            isVisible: true,
             clickedOnMarker: false,
           };
         });

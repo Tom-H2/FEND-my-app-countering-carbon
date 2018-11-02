@@ -19,7 +19,7 @@ import {
           <Marker
             key={id}
             id="markerPin"
-            position={{lat: marker.lat, lang: marker.lng}}
+            position={{lat:marker.lat, lng:marker.lng}}
             onClick={() => props.handleMarkerClick(marker)}>
             {marker.isOpen && (
               <InfoWindow>
