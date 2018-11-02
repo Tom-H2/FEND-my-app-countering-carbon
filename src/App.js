@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import './App.css';
 import Map from './components/Map';
+import Toolbar from './components/Toolbar';
 import SquareAPI from './API/'
 
 class App extends Component {
@@ -52,8 +53,8 @@ handleMarkerClick = (marker) => { //Code here written with help from Susan Pomme
     componentDidMount() {
       SquareAPI.search({
         near:"Sequim, WA", //Sequim is a placeholder but will be near marker
-        query: "coffee",
-        radius: 5000,
+        query: "national",
+        radius: 100000,
         limit: 10
       }).then(results => {
         console.log(results);
@@ -80,8 +81,10 @@ handleMarkerClick = (marker) => { //Code here written with help from Susan Pomme
   render() {
     return (
       <div className="App">
-            <h1>Countering Carbon</h1>
-            <h2>What to do while charging your EV</h2>
+        <Toolbar />
+        <main style={{marginTop: '64px'}}>
+          <p>Page Content</p>
+        </main>
           <Map
           {...this.state}
           handleMarkerClick={this.handleMarkerClick}/>

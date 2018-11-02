@@ -1,10 +1,17 @@
-### TODO
-1.  Did you use React Create App to create your program files?   
-If so, you do NOT need to do anything to the service worker file it creates  -- just add error handing (see more below)
+### Instructions to open and use App
+I went to your P7 repo in your github
+I hit the clone/download button and selected download
+That action put a copy of your repo on my computer's download folder
 
-2.  Did you use react-google-maps for the map?   
-Reason I ask is that Forrest's tutorials and many people used it, so will have more resources to answer questions if you do   
-(I started using basic JavaScript and could not get the Markers and InfoWindows working)
+I moved that zipped folder from download to a C:// folder and unzipped (extract all)
+
+In a terminal window I navigated to the file location of unzipped folder
+I entered npm install react (can't tell you why this is needed if you already had this running in React and I had other React programs running on my machine)
+After that was complete, then entered npm start
+New browser window opened with your program running
+
+### TODO
+
 
 3.  Did you sketch out your page layout and think a bit about responsive ahead of time?  
 Web Foundations -> Lesson 14 Common Responsive Patterns --> Column Drop
