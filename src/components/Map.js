@@ -10,8 +10,8 @@ import {
 //console.logs show information onClick of markers. InfoWindows not yet working
   const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     <GoogleMap
-      defaultZoom={10}
-      defaultCenter={{lat: 48.100, lng: -123.000}}
+      defaultZoom={12}
+      defaultCenter={{lat: 48.080, lng: -123.100}}
     >
       {props.markers && props.markers.filter(marker => marker.isVisible).map((marker,id) => {
         const venueInfo = props.venues.find(venue =>(venue.id ===marker.id))
