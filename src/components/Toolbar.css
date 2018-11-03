@@ -5,6 +5,7 @@
   width: 100%;
   background: green;
   height: 56px;
+  z-index: 10000;
 }
 
 .toolbar_navigation {
@@ -47,4 +48,10 @@
 .toolbar_navigation-items a:hover,
 .toolbar_navigation-items a:active {
   color: blue;
+}
+
+@media (max-width: 768px) {
+  .toolbar_navigation-items {
+    display: none;
+  }
 }

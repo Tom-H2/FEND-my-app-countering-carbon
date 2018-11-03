@@ -32,3 +32,7 @@
 .view-drawer a:active {
   color: teal;
 }
+
+@media (min-width: 768px) {
+
+}
