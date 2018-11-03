@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Map from './components/Map';
 import Toolbar from './components/Toolbar';
+import ViewDrawer from './components/ListView/ViewDrawer'
 import SquareAPI from './API/'
 
 class App extends Component {
@@ -12,7 +13,8 @@ class App extends Component {
       venues: [],
       markers: [],
       center: [],
-      zoom: [12]
+      zoom: [12],
+      viewDrawerOpen: false
     };
   }
   //Closes open markers--changes in blue
@@ -78,12 +80,25 @@ handleMarkerClick = (marker) => { //Code here written with help from Susan Pomme
       })
       }
 
+      drawerToggleClickHandler = () => {
+        this.setState((prevState) =>{
+          return {viewDrawerOpen: !prevState.viewDrawerOpen};
+        });
+      };
+
   render() {
+    let viewDrawer;
+    let map;
+
+    if (this.state.viewDrawerOpen) {
+      viewDrawer = <ViewDrawer />;
+    }
     return (
-      <div className="App">
-        <Toolbar />
+      <div style={{height: '100%'}}>
+        <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
+        {viewDrawer}
         <main style={{marginTop: '64px'}}>
-          <p>Page Content</p>
+          <p>Park your EV, plug in, and explore on foot as far as you want!</p>
         </main>
           <Map
           {...this.state}

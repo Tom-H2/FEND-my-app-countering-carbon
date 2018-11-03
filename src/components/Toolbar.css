@@ -20,6 +20,10 @@
   font-size: 1.5rem;
 }
 
+.toolbar_logo {
+  margin-left: 0.5rem;
+}
+
 .spacer {
   flex: 1;
 }

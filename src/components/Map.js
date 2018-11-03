@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import './Maps.css';
+
 import {
     withScriptjs,
     withGoogleMap,
