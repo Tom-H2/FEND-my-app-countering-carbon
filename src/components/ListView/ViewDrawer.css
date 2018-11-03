@@ -28,9 +28,21 @@
   font-size: 1.2rem;
 }
 
+.view-drawer button {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
 .view-drawer a:hover,
 .view-drawer a:active {
-  color: teal;
+  color: green;
+}
+
+.view-drawer button:hover,
+.view-drawer button:active {
+  color: green;
 }
 
 @media (min-width: 768px) {

@@ -68,7 +68,7 @@ handleMarkerClick = (marker) => { //Code here written with help from Susan Pomme
             lng: venue.location.lng,
             id: venue.id,
             isOpen: false,
-            isVisible: true,
+            isVisible: false, //Allows marker to be visible or to be hidden
             clickedOnMarker: false,
           };
         });
