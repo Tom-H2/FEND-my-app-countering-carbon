@@ -86,12 +86,16 @@ handleMarkerClick = (marker) => { //Code here written with help from Susan Pomme
         });
       };
 
+      mapClickHandler = () => {
+        this.setState({viewDrawerOpen: false});
+      }
+
   render() {
     let viewDrawer;
-    let map;
 
     if (this.state.viewDrawerOpen) {
       viewDrawer = <ViewDrawer />;
+
     }
     return (
       <div style={{height: '100%'}}>
@@ -102,7 +106,8 @@ handleMarkerClick = (marker) => { //Code here written with help from Susan Pomme
         </main>
           <Map
           {...this.state}
-          handleMarkerClick={this.handleMarkerClick}/>
+          handleMarkerClick={this.handleMarkerClick}
+          click={this.mapClickHandler}/>
       </div>
     );
   }
