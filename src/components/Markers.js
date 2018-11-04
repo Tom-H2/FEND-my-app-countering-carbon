@@ -1,5 +1,13 @@
 //Hardcoded markers of free EV plug ins
-
+{props.isMarkerShown && //Hardcoded marker for start point of initial EV plug-in spot
+  <Marker
+    title={'Clallam Coop Free EV Plug-in'}
+    position={{lat: 48.080, lng: -123.100}}
+    onClick={console.log}>
+      {Marker.isOpen && <InfoWindow>
+        <p>Clallam Coop</p>
+      </InfoWindow>}
+  </Marker>}
 {props.isMarkerShown &&
   <Marker
     title={'Clallam Coop'}

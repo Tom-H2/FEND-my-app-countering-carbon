@@ -54,9 +54,9 @@ handleMarkerClick = (marker) => { //Code here written with help from Susan Pomme
 
     componentDidMount() {
       SquareAPI.search({
-        near:"Sequim, WA", //Sequim is a placeholder but will be near marker
-        query: "national",
-        radius: 100000,
+        near:"Port Angeles, WA", //Sequim is a placeholder but will be near marker
+        query: "book",
+        radius: 50000,
         limit: 10
       }).then(results => {
         console.log(results);
@@ -68,7 +68,7 @@ handleMarkerClick = (marker) => { //Code here written with help from Susan Pomme
             lng: venue.location.lng,
             id: venue.id,
             isOpen: false,
-            isVisible: false, //Allows marker to be visible or to be hidden
+            isVisible: true, //Allows marker to be visible or to be hidden
             clickedOnMarker: false,
           };
         });
@@ -86,8 +86,8 @@ handleMarkerClick = (marker) => { //Code here written with help from Susan Pomme
         });
       };
 
-      mapClickHandler = () => {
-        this.setState({viewDrawerOpen: false});
+      markerHardcodeClickHandler = () => {
+        this.setState({viewDrawerOpen: true});
       }
 
   render() {

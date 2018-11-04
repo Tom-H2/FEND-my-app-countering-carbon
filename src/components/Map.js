@@ -13,17 +13,8 @@ import {
   const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     <GoogleMap
       defaultZoom={12}
-      defaultCenter={{lat: 48.080, lng: -123.100}}
-    >
-    {props.isMarkerShown && //Hardcoded marker for start point of initial EV plug-in spot
-      <Marker
-        title={'Clallam Coop Free EV Plug-in'}
-        position={{lat: 48.080, lng: -123.100}}
-        onClick={console.log}>
-          {Marker.isOpen && <InfoWindow>
-            <p>Clallam Coop</p>
-          </InfoWindow>}
-      </Marker>}
+      defaultCenter={{lat: 48.1215, lng: -123.434}}>
+
       {props.markers && props.markers.filter(marker => marker.isVisible).map((marker,id) => {
         const venueInfo = props.venues.find(venue =>(venue.id ===marker.id))
         return(
