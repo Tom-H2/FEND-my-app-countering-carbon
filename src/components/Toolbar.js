@@ -13,7 +13,7 @@ const toolbar = props => (
       <div className="spacer"></div>
       <div className="toolbar_navigation-items">
           <ul>
-              <li><a href="/">Filter Options</a></li>
+              <li onClick=""><a href="/">Filter Options</a></li>
           </ul>
       </div>
     </nav>

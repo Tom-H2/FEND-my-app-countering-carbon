@@ -86,7 +86,7 @@ handleMarkerClick = (marker) => { //Code here written with help from Susan Pomme
         });
       };
 
-      markerHardcodeClickHandler = () => {
+      filterOptionClickHandler = () => {
         this.setState({viewDrawerOpen: true});
       }
 
