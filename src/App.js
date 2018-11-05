@@ -55,8 +55,8 @@ handleMarkerClick = (marker) => { //Code here written with help from Susan Pomme
     componentDidMount() {
       SquareAPI.search({
         near:"Port Angeles, WA", //Sequim is a placeholder but will be near marker
-        query: "book",
-        radius: 50000,
+        query: "bar",
+        radius: 8000,
         limit: 10
       }).then(results => {
         console.log(results);
