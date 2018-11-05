@@ -1,6 +1,6 @@
 .view-drawer {
   height: 100%;
-  background: white;
+  background: teal;
   box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
@@ -22,10 +22,9 @@
   justify-content: center;
 }
 
-.view-drawer a {
-  color: black;
-  text-decoration: none;
-  font-size: 1.2rem;
+.view-drawer field {
+  width: 30%;
+  display: flex;
 }
 
 .view-drawer button {
