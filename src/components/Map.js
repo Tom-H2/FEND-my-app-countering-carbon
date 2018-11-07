@@ -45,9 +45,15 @@ import {
         this.props = props
       }
       render() {
+        const style = {
+          width: '100%',
+          height: '100%'
+        }
         return (
           <div className="map">
             <MyMapComponent
+              role="application"
+              aria-label="map"
               {...this.props}
               isMarkerShown
               googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDeiczf4IikLo9sb8zfCtNQPHzHcakh-dg"

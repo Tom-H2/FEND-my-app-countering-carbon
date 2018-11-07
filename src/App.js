@@ -14,6 +14,8 @@ class App extends Component {
       markers: [],
       center: [],
       zoom: [12],
+      intialQuery: "",
+      initialRadius: "",
       viewDrawerOpen: false
     };
   }
@@ -87,12 +89,13 @@ handleMarkerClick = (marker) => { //Code here written with help from Susan Pomme
       };
 
       filterOptionClickHandler = () => {
-        this.setState({viewDrawerOpen: true});
-      }
+        this.setState((prevState) =>{
+          return {viewDrawerOpen: !prevState.viewDrawerOpen};
+        });
+      };
 
   render() {
     let viewDrawer;
-
     if (this.state.viewDrawerOpen) {
       viewDrawer = <ViewDrawer />;
 
