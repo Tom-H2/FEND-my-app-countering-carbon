@@ -33,9 +33,9 @@ class ViewDrawer extends Component {
                   <input type={"number"} id={"meters"} placeholder={"Distance in meters"} />
               </form>
               <button onClick={() => this.updateFilter()} className="btn btn-primary">Submit</button>
+              <VenueList/>
             </ul>
-        </nav>
-        <VenueList />
+        </nav>  
       </div>
     );
 

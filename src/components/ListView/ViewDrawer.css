@@ -3,7 +3,7 @@
   background: teal;
   box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
   position: fixed;
-  top: 0;
+  top: 2.5rem;
   left: 0;
   width: 60%;
   max-width: 400px;
@@ -11,7 +11,8 @@
 }
 
 .view-drawer li {
-  margin: 0.5rem 0;
+  margin: 0.5rem;
+  margin-top: 1rem;
 }
 
 .view-drawer ul {
@@ -19,18 +20,21 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: top;
+  margin-top: 0.5rem;
+
 }
 
-.view-drawer field {
-  width: 30%;
+.view-drawer form{
   display: flex;
+  margin-left: 0.7rem;
 }
 
 .view-drawer button {
   width: 30%;
   display: flex;
-  justify-content: center;
+  margin-top: 1.5rem;
+  margin-left: 0.7rem;
   font-size: 1.5rem;
 }
 
