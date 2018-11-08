@@ -5,10 +5,13 @@ import ListItem from "./ListItem"
 export default class VenueList extends Component {
   render () {
         return (
-          <div className="venueList">
-            <ListItem />
-          </div>
+          <ol className="venueList">
+            <ListItem>
+            {this.props.venues &&
+              this.props.venues.map((venue, idx) => <ListItem key={idx} {...venue} />)}
+            </ListItem>
+          </ol>
 
-        )
+        );
     }
 }

@@ -49,10 +49,10 @@ handleMarkerClick = (marker) => { //Code here written with help from Susan Pomme
   this.closeOpenMarkers()
   marker.isOpen = true;
   marker.clickedOnMarker = true;
-  this.setState({markers: Object.assign(this.state.markers, marker)})
+  this.setState({markers: Object.assign(this.state.markers, marker)});
   this.openInfoWindowOnClick(marker);
-}
 
+};
 
     componentDidMount() {
       SquareAPI.search({
@@ -96,8 +96,10 @@ handleMarkerClick = (marker) => { //Code here written with help from Susan Pomme
 
   render() {
     let viewDrawer;
+    let filterOption;
     if (this.state.viewDrawerOpen) {
       viewDrawer = <ViewDrawer />;
+      filterOption = <Toolbar click={this.filterOptionClickHandler} />
 
     }
     return (

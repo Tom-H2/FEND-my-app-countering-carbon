@@ -6,7 +6,8 @@ export default class ListItem extends Component {
     render (){
         return (
             <li className="listItem">
-              Venue List Goes Here
+              {this.props.name}
+              Names
           </li>
 
         )
