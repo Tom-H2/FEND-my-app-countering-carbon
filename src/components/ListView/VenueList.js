@@ -19,7 +19,6 @@ class VenueList extends Component {
                   {venue.name}
                 </li>
               )}
-              console.log(venue.name);
             </ol>
           </div>
         );
