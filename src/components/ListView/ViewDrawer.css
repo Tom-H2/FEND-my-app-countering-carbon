@@ -10,7 +10,7 @@
   z-index: 200;
 }
 
-.coffeeList {
+.view-drawer coffeeList {
   list-style-type: none;
   padding: 2px;
   margin-bottom: 2px;

@@ -5,7 +5,7 @@ import VenueList from './VenueList';
 
 class ViewDrawer extends Component {
   //prop changes trigger update to render
-  componentWillReceiveProps=(props)=> {
+  componentWillReceiveProps = (props) => {
     this.props = props
   }
 
