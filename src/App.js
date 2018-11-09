@@ -14,12 +14,10 @@ class App extends Component {
       markers: [],
       center: [],
       zoom: [12],
-      intialQuery: "",
-      initialRadius: "",
       viewDrawerOpen: false
     };
   }
-  //Closes open markers--changes in blue
+  //Closes open markers
   closeOpenMarkers = () => {
     const markers = this.state.markers.map(marker =>{
       marker.isOpen = false;
@@ -30,7 +28,7 @@ class App extends Component {
     this.setState({markers:Object.assign(markers, markers)})
   }
 
-//Changes state when marker is clicked --green edits
+//Changes state when marker is clicked
 openInfoWindowOnClick = (marker) => {
   const clickedVenue = this.state.venues.find(venue => venue.id===marker.id)
   //console.log(clickedVenue)
@@ -44,7 +42,7 @@ openInfoWindowOnClick = (marker) => {
   })
 }
 
-//function to open InfoWindow on click of marker--green edits
+//function to open InfoWindow on click of marker
 handleMarkerClick = (marker) => { //Code here written with help from Susan Pommer
   this.closeOpenMarkers()
   marker.isOpen = true;
@@ -56,8 +54,8 @@ handleMarkerClick = (marker) => { //Code here written with help from Susan Pomme
 
     componentDidMount() {
       SquareAPI.search({
-        near:"Port Angeles, WA", //Sequim is a placeholder but will be near marker
-        query: "bar",
+        near:"Port Angeles, WA",
+        query: "coffee",
         radius: 1600,
         limit: 20
       }).then(results => {
@@ -88,18 +86,10 @@ handleMarkerClick = (marker) => { //Code here written with help from Susan Pomme
         });
       };
 
-      filterOptionClickHandler = () => {
-        this.setState((prevState) =>{
-          return {viewDrawerOpen: !prevState.viewDrawerOpen};
-        });
-      };
-
   render() {
     let viewDrawer;
-    let filterOption;
     if (this.state.viewDrawerOpen) {
       viewDrawer = <ViewDrawer />;
-      filterOption = <Toolbar click={this.filterOptionClickHandler} />
 
     }
     return (
@@ -107,7 +97,6 @@ handleMarkerClick = (marker) => { //Code here written with help from Susan Pomme
         <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
         {viewDrawer}
         <main style={{marginTop: '64px'}}>
-          <p>Park your EV, plug in, and explore on foot as far as you want!</p>
         </main>
           <Map
           {...this.state}

@@ -9,13 +9,8 @@ const toolbar = props => (
       <div>
         <ViewToggleButton click={props.drawerClickHandler}/>
       </div>
-      <div className="toolbar_logo"><a href="/">Countering Carbon</a></div>
+      <div className="toolbar_logo">Countering Carbon</div>
       <div className="spacer"></div>
-      <div className="toolbar_navigation-items">
-          <ul>
-              <li className="filterOption" onClick={props.click}><a href="/">Filter Options</a></li>
-          </ul>
-      </div>
     </nav>
   </header>
 );

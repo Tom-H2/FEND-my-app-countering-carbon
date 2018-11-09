@@ -3,11 +3,31 @@
   background: teal;
   box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
   position: fixed;
-  top: 2.5rem;
+  top: 3.7rem;
   left: 0;
   width: 60%;
   max-width: 400px;
   z-index: 200;
+}
+
+.coffeeList {
+  list-style-type: none;
+  padding: 2px;
+  margin-bottom: 2px;
+  margin-top: 3px;
+}
+
+.coffeeName {
+padding: 3px;
+margin-bottom: 2px;
+color: #3300FF;
+font-size: 8px;
+font-weight: bold;
+background: #B0B0B0;
+border-left: solid 2px #3300FF;
+cursor: pointer;
+display: flex;
+align-items: center;
 }
 
 .view-drawer li {
