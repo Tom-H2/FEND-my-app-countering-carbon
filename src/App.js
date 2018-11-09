@@ -89,7 +89,7 @@ handleMarkerClick = (marker) => { //Code here written with help from Susan Pomme
   render() {
     let viewDrawer;
     if (this.state.viewDrawerOpen) {
-      viewDrawer = <ViewDrawer />;
+      viewDrawer = <ViewDrawer {...this.state} />;
 
     }
     return (

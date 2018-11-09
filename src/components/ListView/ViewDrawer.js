@@ -7,6 +7,7 @@ class ViewDrawer extends Component {
   //prop changes trigger update to render
   componentWillReceiveProps = (props) => {
     this.props = props
+
   }
 
 
