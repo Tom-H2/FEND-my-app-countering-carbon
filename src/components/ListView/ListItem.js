@@ -7,7 +7,7 @@ export default class ListItem extends Component {
         return (
             <li className="listItem">
               {this.props.name}
-              Names
+              Venue Name
           </li>
 
         )

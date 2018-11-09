@@ -58,8 +58,8 @@ handleMarkerClick = (marker) => { //Code here written with help from Susan Pomme
       SquareAPI.search({
         near:"Port Angeles, WA", //Sequim is a placeholder but will be near marker
         query: "bar",
-        radius: 8000,
-        limit: 10
+        radius: 1600,
+        limit: 20
       }).then(results => {
         console.log(results);
         const {venues} = results.response;

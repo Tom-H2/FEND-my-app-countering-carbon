@@ -45,10 +45,7 @@ import {
         this.props = props
       }
       render() {
-        const style = {
-          width: '100%',
-          height: '100%'
-        }
+
         return (
           <div className="map">
             <MyMapComponent

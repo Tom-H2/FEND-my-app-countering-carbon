@@ -24,15 +24,10 @@ class ViewDrawer extends Component {
       <div className="sideBar">
         <nav className="view-drawer">
             <ul>
-              <li className="query">What do you want to find?</li>
+              <li className="query">Filter the List</li>
                 <form className='form-query'>
-                    <input type={"search"} id={"search"} placeholder={"Filter Query"} />
+                    <input type={"search"} id={"search"} placeholder={"Filter List"} />
                 </form>
-              <li className="radius">How how many meters do you want to walk?</li>
-              <form className='form-radius'>
-                  <input type={"number"} id={"meters"} placeholder={"Distance in meters"} />
-              </form>
-              <button onClick={() => this.updateFilter()} className="btn btn-primary">Submit</button>
               <VenueList />
             </ul>
         </nav>
