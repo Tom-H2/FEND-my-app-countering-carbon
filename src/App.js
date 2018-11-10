@@ -45,26 +45,26 @@ openInfoWindowOnClick = (marker) => {
 //function to open InfoWindow on click of marker
 handleMarkerClick = (marker) => { //Code here written with help from Susan Pommer
   this.closeOpenMarkers()
-  marker.isOpen = true;
+  marker.isOpen = true; //allows infoWindows to open
   marker.clickedOnMarker = true;
   this.setState({markers: Object.assign(this.state.markers, marker)});
   this.openInfoWindowOnClick(marker);
 };
 
-venueClickHandler = venue => {
-  const marker = this.state.markers.find(marker => marker.id ===venue.id);
-  this.handleMarkerClick(marker);
+venueClickHandler = venue => { //function that connects venue click to call same action as marker click
+  const marker = this.state.markers.find(marker => marker.id === venue.id);
+  this.handleMarkerClick (marker);
   console.log(venue);
 };
 
     componentDidMount() {
-      SquareAPI.search({
-        near:"Port Angeles, WA",
+      SquareAPI.search({ //sets the parameters for initial search
+        near:"Port Angeles, WA", //these sets of data are not changed by the App
         query: "coffee",
         radius: 1600,
         limit: 20
       }).then(results => {
-        console.log(results);
+        //console.log(results);
         const {venues} = results.response;
         console.log(venues);
         const markers = venues.map(venue => {
@@ -91,7 +91,7 @@ venueClickHandler = venue => {
         });
       };
 
-  render() {
+  render() { //allows access to the ViewDrawer component and sets state
     let viewDrawer;
     if (this.state.viewDrawerOpen) {
       viewDrawer = <ViewDrawer {...this.state} venueClickHandler={this.venueClickHandler}/>;
