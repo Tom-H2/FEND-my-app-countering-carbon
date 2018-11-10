@@ -49,7 +49,12 @@ handleMarkerClick = (marker) => { //Code here written with help from Susan Pomme
   marker.clickedOnMarker = true;
   this.setState({markers: Object.assign(this.state.markers, marker)});
   this.openInfoWindowOnClick(marker);
+};
 
+venueClickHandler = venue => {
+  const marker = this.state.markers.find(marker => marker.id ===venue.id);
+  this.handleMarkerClick(marker);
+  console.log(venue);
 };
 
     componentDidMount() {
@@ -89,7 +94,7 @@ handleMarkerClick = (marker) => { //Code here written with help from Susan Pomme
   render() {
     let viewDrawer;
     if (this.state.viewDrawerOpen) {
-      viewDrawer = <ViewDrawer {...this.state} />;
+      viewDrawer = <ViewDrawer {...this.state} venueClickHandler={this.venueClickHandler}/>;
 
     }
     return (

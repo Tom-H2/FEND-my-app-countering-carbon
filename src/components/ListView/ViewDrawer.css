@@ -10,15 +10,21 @@
   z-index: 200;
 }
 
+.venue-list {
+  list-style-type: none;
+  padding: 2px;
+  margin-bottom: 2px;
+  margin-top: 3px;
+}
 
-.coffeeName {
+.venue-name {
 padding: 3px;
 margin-bottom: 2px;
-color: #3300FF;
+color: black;
 font-size: 8px;
 font-weight: bold;
-background: #B0B0B0;
-border-left: solid 2px #3300FF;
+background: lime;
+border: solid 2px blue;
 cursor: pointer;
 display: flex;
 align-items: center;

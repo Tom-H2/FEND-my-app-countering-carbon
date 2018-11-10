@@ -12,11 +12,11 @@ class VenueList extends Component {
   render () {
         return (
           <div>
-            <ol className="coffeeList">
-              Venues Go Here
+            <ol className="venue-list">
               {this.props.venues && this.props.venues.map(venue =>
                 <li
-                  className="coffeeName"
+                  className="venue-name"
+                  onClick={()=> this.props.venueClickHandler(this.props)}
                   key={venue.id}>
                   {venue.name}
                 </li>

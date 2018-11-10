@@ -20,8 +20,8 @@ class ViewDrawer extends Component {
                       id="search"
                       placeholder="Filter Venues"
                     />
-            <ol className="coffeeList">
-              <VenueList {...this.props}/>
+            <ol className="venue-list">
+              <VenueList {...this.props} venueClickHandler={this.props.venueClickHandler}/>
             </ol>
         </nav>
       </div>
