@@ -22,18 +22,22 @@ class ViewDrawer extends Component {
 
   render() {
     return (
-      <div className="sideBar">
+      <aside className="sideBar">
         <nav className="view-drawer">
                     <input
-                      type="search"
-                      id="search"
+                      type="text"
+                      id="filter"
                       placeholder="Filter Venues"
+                      onChange={e => this
+                        .updateQuery(e.target.value)}
+                      value={this.state.query}
                     />
             <ol className="venue-list">
               <VenueList {...this.props} venueClickHandler={this.props.venueClickHandler}/>
             </ol>
+            <em>Data Rendered from <a href="https://api.foursquare.com/v2">FourSquare</a></em>
         </nav>
-      </div>
+      </aside>
     );
   }
 }

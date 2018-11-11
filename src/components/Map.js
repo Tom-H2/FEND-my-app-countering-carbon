@@ -21,7 +21,7 @@ import {
         return(
           <Marker
             key={id}
-            id="markerPin"
+            className="marker-pin"
             position={{lat:marker.lat, lng:marker.lng}}
             onClick={() => props.handleMarkerClick(marker)}>
             {marker.isOpen && (
@@ -56,7 +56,7 @@ import {
               isMarkerShown
               googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDeiczf4IikLo9sb8zfCtNQPHzHcakh-dg"
               loadingElement={<div style={{ height: `100%` }} />}
-              containerElement={<div style={{ height: `400px` }} />}
+              containerElement={<div style={{ height: `100%` }} />}
               mapElement={<div style={{ height: `100%` }} />}
             />
           </div>

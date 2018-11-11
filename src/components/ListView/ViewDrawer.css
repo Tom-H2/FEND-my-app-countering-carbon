@@ -1,8 +1,10 @@
 .view-drawer {
-  height: 80%;
+  height: 100%;
   background: teal;
   box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
   position: fixed;
+  padding: 5px;
+  color: white;
   top: 3.7rem;
   left: 0;
   width: 30%;
@@ -12,26 +14,32 @@
 
 .venue-list {
   list-style-type: none;
-  padding: 2px;
+  padding: 0;
   margin-bottom: 2px;
   margin-top: 3px;
+  margin-left: 0;
 }
 
-.venue-name {
-padding: 3px;
-margin-bottom: 2px;
-color: black;
-font-size: 8px;
-font-weight: bold;
-background: lime;
-border: solid 2px blue;
-cursor: pointer;
-display: flex;
-align-items: center;
+.venue-name, #filter {
+  padding: 3px;
+  margin-left: 0;
+  margin-bottom: 2px;
+  color: black;
+  font-size: 12px;
+  font-weight: bold;
+  background: lime;
+  border: solid 2px blue;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+#filter{
+  background: white;
+  width: 95%;
 }
 
 .view-drawer li {
-  margin: 0.5rem;
+  margin: 0.5rem 0;
   margin-top: 1rem;
 }
 
@@ -42,7 +50,8 @@ align-items: center;
   flex-direction: column;
   justify-content: top;
   margin-top: 0.5rem;
-
+  margin-left: 0;
+  padding-left: 0;
 }
 
 .view-drawer form{
@@ -57,6 +66,7 @@ align-items: center;
   margin-left: 0.7rem;
   font-size: 1.5rem;
 }
+
 
 .view-drawer a:hover,
 .view-drawer a:active {

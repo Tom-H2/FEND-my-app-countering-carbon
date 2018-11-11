@@ -14,6 +14,7 @@ class App extends Component {
       markers: [],
       center: [],
       zoom: [12],
+      filtered: null,
       viewDrawerOpen: false
     };
   }
@@ -60,9 +61,9 @@ venueClickHandler = venue => { //function that connects venue click to call same
     componentDidMount() {
       SquareAPI.search({ //sets the parameters for initial search
         near:"Port Angeles, WA", //these sets of data are not changed by the App
-        query: "coffee",
+        query: "bar",
         radius: 1600,
-        limit: 20
+        limit: 10
       }).then(results => {
         //console.log(results);
         const {venues} = results.response;
