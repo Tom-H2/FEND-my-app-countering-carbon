@@ -26,7 +26,7 @@ import {
             onClick={() => props.handleMarkerClick(marker)}
             animation={marker.clickedOnMarker ===true ? 1:null}>
             {marker.isOpen && (
-              <InfoWindow>
+              <InfoWindow onCloseClick={props.closeOpenMarkers}>
                 <React.Fragment>
                   <div className="info-window">
                     <p className="info-title">{venueInfo.name}</p>
