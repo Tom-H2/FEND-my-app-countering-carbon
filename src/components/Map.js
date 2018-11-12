@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 
 import './Maps.css';
-//import ViewDrawer from './ListView/ViewDrawer'
-
+//scripts that allow add ons from Google Maps
 import {
     withScriptjs,
     withGoogleMap,
@@ -10,12 +9,12 @@ import {
     Marker,
     InfoWindow
 } from "react-google-maps"
-//console.logs show information onClick of markers.
+//Loads map and centers map on Port Angeles, Washington.
   const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     <GoogleMap
       defaultZoom={12}
       defaultCenter={{lat: 48.1215, lng: -123.434}}>
-
+      //carries marker props down from App.js
       {props.markers && props.markers.filter(marker => marker.isVisible).map((marker,id) => {
         const venueInfo = props.filteredVenues.find(venue =>(venue.id ===marker.id))
         return(

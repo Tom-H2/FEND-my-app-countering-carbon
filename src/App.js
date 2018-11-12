@@ -25,7 +25,7 @@ class App extends Component {
     const markers = this.state.markers.map(marker =>{
       marker.isOpen = false;
       marker.clickedOnMarker = false;
-      marker.animation="null";
+      marker.animation="null"; //sets animation of markers
       return marker;
     });
     //resets state of markers
@@ -64,7 +64,7 @@ filterOnQuery = event => {
   const query = event.target.value;
   this.setState({query})
 
-  // no query help and instruction from Susan Pommer on these error handlers
+  //query help and instruction from Susan Pommer on these error handlers
   if (query === "") {
     const filteredVenues = this.state.venues;
     this.setState({filteredVenues});
@@ -73,7 +73,7 @@ filterOnQuery = event => {
     this.setState({filteredMarkers});
 
   }
-  // when query entered
+  //when query entered
   else {
     // call filter function
     const filteredVenues = this.venueFilter(query);
@@ -84,7 +84,7 @@ filterOnQuery = event => {
   }
 }
 
-  // filter master venue list based on query
+  //filter master venue list based on query
   venueFilter = (query) => {
     // loop though Venue array to find Venues which have query string
     const filteredVenues = this.state.venues.filter(venue =>
@@ -93,7 +93,7 @@ filterOnQuery = event => {
     return filteredVenues;
   };
 
-  // change marker visibility for venues which do not match filter query
+  //change marker visibility for venues which do not match filter query
   markerFilter = (query) => {
     // map through filteredVenues to find venue names = query
     const filteredMarkers = this.state.venues.map(venue => {
