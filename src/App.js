@@ -64,9 +64,8 @@ venueClickHandler = venue => { //function that connects venue click to call same
 filterOnQuery = event => {
   const query = event.target.value;
   this.setState({query})
-  console.log(query) // REMOVE
 
-  // no query
+  // no query help and instruction from Susan Pommer on these error handlers
   if (query === "") {
     const filteredVenues = this.state.venues;
     this.setState({filteredVenues});
@@ -74,8 +73,6 @@ filterOnQuery = event => {
     const filteredMarkers = this.state.markers;
     this.setState({filteredMarkers});
 
-    console.log({filteredVenues}); // TESTING - REMOVE
-    console.log({filteredMarkers}); // TESTING - REMOVE
   }
   // when query entered
   else {
@@ -85,9 +82,6 @@ filterOnQuery = event => {
 
     const filteredMarkers = this.markerFilter(query);
     this.setState({filteredMarkers})
-
-    console.log({filteredVenues}); // TESTING - REMOVE
-    console.log({filteredMarkers}); // TESTING - REMOVE
   }
 }
 
@@ -126,7 +120,6 @@ filterOnQuery = event => {
         radius: 1600,
         limit: 10
       }).then(results => {
-        //console.log(results);
         const {venues} = results.response;
         console.log(venues);
         const markers = venues.map(venue => {
@@ -154,7 +147,7 @@ filterOnQuery = event => {
       })
       }
 
-      drawerToggleClickHandler = () => {
+      drawerToggleClickHandler = () => { //allows for side bar to open
         this.setState((prevState) =>{
           return {viewDrawerOpen: !prevState.viewDrawerOpen};
         });
