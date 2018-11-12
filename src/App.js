@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+import React, {
+  Component
+} from 'react';
 
 import './App.css';
 import Map from './components/Map';
@@ -22,67 +24,85 @@ class App extends Component {
   }
   //Closes open markers and sets animation
   closeOpenMarkers = () => {
-    const markers = this.state.markers.map(marker =>{
+    const markers = this.state.markers.map(marker => {
       marker.isOpen = false;
       marker.clickedOnMarker = false;
-      marker.animation="null"; //sets animation of markers
+      marker.animation = "null"; //sets animation of markers
       return marker;
     });
     //resets state of markers
-    this.setState({markers:Object.assign(markers, markers)})
+    this.setState({
+      markers: Object.assign(markers, markers)
+    })
   }
 
-//Changes state when marker is clicked
-openInfoWindowOnClick = (marker) => {
-  const clickedVenue = this.state.venues.find(venue => venue.id===marker.id)
-  SquareAPI.getVenueDetails(marker.id).then(results => {
-    const mergedVenueData = Object.assign(clickedVenue, results.response.venue);
-    this.setState({venues: Object.assign(this.state.venues, mergedVenueData)})
-  })
-  .catch(error => {
-    this.setState({error})
-    console.log(this.state.error)
-  })
-}
-
-//function to open InfoWindow on click of marker
-handleMarkerClick = (marker) => { //Code here written with help from Susan Pommer
-  this.closeOpenMarkers()
-  marker.isOpen = true; //allows infoWindows to open
-  marker.clickedOnMarker = true;
-  this.setState({markers: Object.assign(this.state.markers, marker)});
-  this.openInfoWindowOnClick(marker);
-};
-
-venueClickHandler = venue => { //function that connects venue click to call same action as marker click
-  const marker = this.state.markers.find(marker => marker.id === venue.id);
-  this.handleMarkerClick (marker);
-};
-
-// function to filter markers on user entry in input box
-filterOnQuery = event => {
-  const query = event.target.value;
-  this.setState({query})
-
-  //query help and instruction from Susan Pommer on these error handlers
-  if (query === "") {
-    const filteredVenues = this.state.venues;
-    this.setState({filteredVenues});
-
-    const filteredMarkers = this.state.markers;
-    this.setState({filteredMarkers});
-
+  //Changes state when marker is clicked
+  openInfoWindowOnClick = (marker) => {
+    const clickedVenue = this.state.venues.find(venue => venue.id === marker.id)
+    SquareAPI.getVenueDetails(marker.id).then(results => {
+        const mergedVenueData = Object.assign(clickedVenue, results.response.venue);
+        this.setState({
+          venues: Object.assign(this.state.venues, mergedVenueData)
+        })
+      })
+      .catch(error => {
+        this.setState({
+          error
+        })
+        console.log(this.state.error)
+      })
   }
-  //when query entered
-  else {
-    // call filter function
-    const filteredVenues = this.venueFilter(query);
-    this.setState({filteredVenues});
 
-    const filteredMarkers = this.markerFilter(query);
-    this.setState({filteredMarkers})
+  //function to open InfoWindow on click of marker
+  handleMarkerClick = (marker) => { //Code here written with help from Susan Pommer
+    this.closeOpenMarkers()
+    marker.isOpen = true; //allows infoWindows to open
+    marker.clickedOnMarker = true;
+    this.setState({
+      markers: Object.assign(this.state.markers, marker)
+    });
+    this.openInfoWindowOnClick(marker);
+  };
+
+  venueClickHandler = venue => { //function that connects venue click to call same action as marker click
+    const marker = this.state.markers.find(marker => marker.id === venue.id);
+    this.handleMarkerClick(marker);
+  };
+
+  // function to filter markers on user entry in input box
+  filterOnQuery = event => {
+    const query = event.target.value;
+    this.setState({
+      query
+    })
+
+    //query help and instruction from Susan Pommer on these error handlers
+    if (query === "") {
+      const filteredVenues = this.state.venues;
+      this.setState({
+        filteredVenues
+      });
+
+      const filteredMarkers = this.state.markers;
+      this.setState({
+        filteredMarkers
+      });
+
+    }
+    //when query entered
+    else {
+      // call filter function
+      const filteredVenues = this.venueFilter(query);
+      this.setState({
+        filteredVenues
+      });
+
+      const filteredMarkers = this.markerFilter(query);
+      this.setState({
+        filteredMarkers
+      })
+    }
   }
-}
 
   //filter master venue list based on query
   venueFilter = (query) => {
@@ -98,28 +118,29 @@ filterOnQuery = event => {
     // map through filteredVenues to find venue names = query
     const filteredMarkers = this.state.venues.map(venue => {
       const match = venue.name.toUpperCase().includes(query.toUpperCase());
-        const marker = this.state.markers.find(marker => marker.id === venue.id);
-        // change marker's visibility if match
-        if (match) {
-          marker.isVisible = true;
-        }
-        else {
-          marker.isVisible = false;
-        }
-        return marker;
+      const marker = this.state.markers.find(marker => marker.id === venue.id);
+      // change marker's visibility if match
+      if (match) {
+        marker.isVisible = true;
+      } else {
+        marker.isVisible = false;
+      }
+      return marker;
     });
     return filteredMarkers
   }
 
 
-    componentDidMount() {
-      SquareAPI.search({ //sets the parameters for initial search
-        near:"Port Angeles, WA", //these sets of data are not changed by the App
+  componentDidMount() {
+    SquareAPI.search({ //sets the parameters for initial search
+        near: "Port Angeles, WA", //these sets of data are not changed by the App
         query: "bar",
         radius: 1600,
         limit: 10
       }).then(results => {
-        const {venues} = results.response;
+        const {
+          venues
+        } = results.response;
         const markers = venues.map(venue => {
           return {
             lat: venue.location.lat,
@@ -130,48 +151,89 @@ filterOnQuery = event => {
             clickedOnMarker: false,
           };
         });
-        this.setState({venues});
-        this.setState({markers});
+        this.setState({
+          venues
+        });
+        this.setState({
+          markers
+        });
 
         // set initial filtered arrays
         const filteredVenues = venues
         const filteredMarkers = markers
-        this.setState({filteredVenues})
-        this.setState({filteredMarkers})
+        this.setState({
+          filteredVenues
+        })
+        this.setState({
+          filteredMarkers
+        })
 
       })
       .catch(error => {
-        this.setState({error});
-      })
-      }
-
-      drawerToggleClickHandler = () => { //allows for side bar to open
-        this.setState((prevState) =>{
-          return {viewDrawerOpen: !prevState.viewDrawerOpen};
+        this.setState({
+          error
         });
+      })
+  }
+
+  drawerToggleClickHandler = () => { //allows for side bar to open
+    this.setState((prevState) => {
+      return {
+        viewDrawerOpen: !prevState.viewDrawerOpen
       };
+    });
+  };
 
   render() { //allows access to the ViewDrawer component and sets state
     let viewDrawer;
     if (this.state.viewDrawerOpen) {
-      viewDrawer = <ViewDrawer {...this.state}
-                    venueClickHandler={this.venueClickHandler}
-                    filterOnQuery={this.filterOnQuery}/>;
+      viewDrawer = < ViewDrawer { ...this.state
+      }
+      venueClickHandler = {
+        this.venueClickHandler
+      }
+      filterOnQuery = {
+        this.filterOnQuery
+      }
+      />;
 
     }
-    return (
-      <div style={{height: '100%'}}>
-        <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
-        {viewDrawer}
-        <main style={{marginTop: '64px'}}>
-        </main>
-          <Map
-          {...this.state}
-          handleMarkerClick={this.handleMarkerClick}
-          closeOpenMarkers={this.closeOpenMarkers}
-          filterOnQuery={this.filterOnQuery}
-          click={this.mapClickHandler}/>
-      </div>
+    return ( <
+      div style = {
+        {
+          height: '100%'
+        }
+      } >
+      <
+      Toolbar drawerClickHandler = {
+        this.drawerToggleClickHandler
+      }
+      /> {
+        viewDrawer
+      } <
+      main style = {
+        {
+          marginTop: '64px'
+        }
+      } >
+      <
+      /main> <
+      Map { ...this.state
+      }
+      handleMarkerClick = {
+        this.handleMarkerClick
+      }
+      closeOpenMarkers = {
+        this.closeOpenMarkers
+      }
+      filterOnQuery = {
+        this.filterOnQuery
+      }
+      click = {
+        this.mapClickHandler
+      }
+      /> <
+      /div>
     );
   }
 }
