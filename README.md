@@ -1,3 +1,5 @@
+#### Countering Carbon App
+
 ### Acknowledgements
 The App represents the final project for the Udacity Grow With Google Front End Nano Degree. It is mostly the work of Thomas Harris but it could not have been completed without the help and support of countless people and countless resources. I will list those more fully below in Colaborations but I wanted to acknowledge here the help of Susan Pommer who has been my Study Buddy over the past months and who has been invaluable in helping complete this project
 
@@ -11,6 +13,11 @@ In a terminal window navigate to the file location of unzipped folder
 Entered "npm install react"
 After that is complete, entered "npm start"
 New browser window opens program running
+
+###Purpose and Use of the App
+This one page app was written using React, React libraries, Google Maps, and FourSquareAPI. The code centers the map on down town Port Angles, WA and the markers represent bars in town. This query, and the radius of the initial API call are hardcoded in the App.js file on lines 118 to 121.
+
+To find information about any of the venues marked on the map click the marker and that will open an infowindow.
 
 
 ### Resources Used
