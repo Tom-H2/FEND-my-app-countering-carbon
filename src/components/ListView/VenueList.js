@@ -13,7 +13,7 @@ class VenueList extends Component {
         return (
           <div>
             <ol className="venue-list">
-              {this.props.venues && this.props.venues.map(venue =>
+              {this.props.filteredVenues && this.props.filteredVenues.map(venue =>
                 <li
                   className="venue-name"
                   onClick={()=> this.props.venueClickHandler(venue)}
