@@ -9,8 +9,7 @@ class ViewDrawer extends Component {
   componentWillReceiveProps = (props) => {
     this.props = props
   }
-
-
+  //Renders the visual elements in the ViewDrawer so each venue appears there
   render() {
     return (
       <aside className="sideBar">
@@ -31,6 +30,3 @@ class ViewDrawer extends Component {
   }
 }
 export default ViewDrawer;
-
-// {this.props.query} cut from line 16
-//{this.props.radius} cut from line 17

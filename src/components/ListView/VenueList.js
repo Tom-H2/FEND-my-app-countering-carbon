@@ -2,9 +2,6 @@
 
 import React, {Component} from "react";
 
-//import ListItem from "./ListItem"
-import './VenueList.css';
-
 class VenueList extends Component {
 
   componentWillReceiveProps=(props)=> {
