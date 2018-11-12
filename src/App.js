@@ -20,11 +20,12 @@ class App extends Component {
       viewDrawerOpen: false
     };
   }
-  //Closes open markers
+  //Closes open markers and sets animation
   closeOpenMarkers = () => {
     const markers = this.state.markers.map(marker =>{
       marker.isOpen = false;
       marker.clickedOnMarker = false;
+      marker.animation="null";
       return marker;
     });
     //resets state of markers
@@ -34,7 +35,6 @@ class App extends Component {
 //Changes state when marker is clicked
 openInfoWindowOnClick = (marker) => {
   const clickedVenue = this.state.venues.find(venue => venue.id===marker.id)
-  //console.log(clickedVenue)
   SquareAPI.getVenueDetails(marker.id).then(results => {
     const mergedVenueData = Object.assign(clickedVenue, results.response.venue);
     this.setState({venues: Object.assign(this.state.venues, mergedVenueData)})
@@ -57,7 +57,6 @@ handleMarkerClick = (marker) => { //Code here written with help from Susan Pomme
 venueClickHandler = venue => { //function that connects venue click to call same action as marker click
   const marker = this.state.markers.find(marker => marker.id === venue.id);
   this.handleMarkerClick (marker);
-  console.log(venue);
 };
 
 // function to filter markers on user entry in input box
@@ -121,7 +120,6 @@ filterOnQuery = event => {
         limit: 10
       }).then(results => {
         const {venues} = results.response;
-        console.log(venues);
         const markers = venues.map(venue => {
           return {
             lat: venue.location.lat,
@@ -170,6 +168,7 @@ filterOnQuery = event => {
           <Map
           {...this.state}
           handleMarkerClick={this.handleMarkerClick}
+          closeOpenMarkers={this.closeOpenMarkers}
           filterOnQuery={this.filterOnQuery}
           click={this.mapClickHandler}/>
       </div>
