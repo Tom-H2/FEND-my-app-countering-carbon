@@ -11,7 +11,9 @@ class App extends Component {
     super();
     this.state = {
       venues: [],
+      filteredVenues: [],
       markers: [],
+      filteredMarkers: [],
       center: [],
       zoom: [12],
       query: "",
@@ -57,6 +59,65 @@ venueClickHandler = venue => { //function that connects venue click to call same
   this.handleMarkerClick (marker);
   console.log(venue);
 };
+
+// function to filter markers on user entry in input box
+filterOnQuery = event => {
+  const query = event.target.value;
+  this.setState({query})
+  console.log(query) // REMOVE
+
+  // no query
+  if (query === "") {
+    const filteredVenues = this.state.venues;
+    this.setState({filteredVenues});
+
+    const filteredMarkers = this.state.markers;
+    this.setState({filteredMarkers});
+
+    console.log({filteredVenues}); // TESTING - REMOVE
+    console.log({filteredMarkers}); // TESTING - REMOVE
+  }
+  // when query entered
+  else {
+    // call filter function
+    const filteredVenues = this.venueFilter(query);
+    this.setState({filteredVenues});
+
+    const filteredMarkers = this.markerFilter(query);
+    this.setState({filteredMarkers})
+
+    console.log({filteredVenues}); // TESTING - REMOVE
+    console.log({filteredMarkers}); // TESTING - REMOVE
+  }
+}
+
+  // filter master venue list based on query
+  venueFilter = (query) => {
+    // loop though Venue array to find Venues which have query string
+    const filteredVenues = this.state.venues.filter(venue =>
+      venue.name.toUpperCase().includes(query.toUpperCase())
+    );
+    return filteredVenues;
+  };
+
+  // change marker visibility for venues which do not match filter query
+  markerFilter = (query) => {
+    // map through filteredVenues to find venue names = query
+    const filteredMarkers = this.state.venues.map(venue => {
+      const match = venue.name.toUpperCase().includes(query.toUpperCase());
+        const marker = this.state.markers.find(marker => marker.id === venue.id);
+        // change marker's visibility if match
+        if (match) {
+          marker.isVisible = true;
+        }
+        else {
+          marker.isVisible = false;
+        }
+        return marker;
+    });
+    return filteredMarkers
+  }
+
 
     componentDidMount() {
       SquareAPI.search({ //sets the parameters for initial search
