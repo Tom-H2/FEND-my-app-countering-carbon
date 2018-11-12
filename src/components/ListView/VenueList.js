@@ -1,3 +1,5 @@
+//maps over individual venues and passes them back up to App.js
+
 import React, {Component} from "react";
 
 //import ListItem from "./ListItem"
