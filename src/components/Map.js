@@ -10,20 +10,21 @@ import {
     Marker,
     InfoWindow
 } from "react-google-maps"
-//console.logs show information onClick of markers. InfoWindows not yet working
+//console.logs show information onClick of markers.
   const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     <GoogleMap
       defaultZoom={12}
       defaultCenter={{lat: 48.1215, lng: -123.434}}>
 
       {props.markers && props.markers.filter(marker => marker.isVisible).map((marker,id) => {
-        const venueInfo = props.venues.find(venue =>(venue.id ===marker.id))
+        const venueInfo = props.filteredVenues.find(venue =>(venue.id ===marker.id))
         return(
           <Marker
             key={id}
             className="marker-pin"
             position={{lat:marker.lat, lng:marker.lng}}
-            onClick={() => props.handleMarkerClick(marker)}>
+            onClick={() => props.handleMarkerClick(marker)}
+            animation={marker.clickedOnMarker ===true ? 1:null}>
             {marker.isOpen && (
               <InfoWindow>
                 <React.Fragment>
