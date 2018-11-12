@@ -141,6 +141,13 @@ filterOnQuery = event => {
         });
         this.setState({venues});
         this.setState({markers});
+
+        // set initial filtered arrays
+        const filteredVenues = venues
+        const filteredMarkers = markers
+        this.setState({filteredVenues})
+        this.setState({filteredMarkers})
+
       })
       .catch(error => {
         this.setState({error});
@@ -158,7 +165,7 @@ filterOnQuery = event => {
     if (this.state.viewDrawerOpen) {
       viewDrawer = <ViewDrawer {...this.state}
                     venueClickHandler={this.venueClickHandler}
-                    queryString={this.state.queryString}/>;
+                    filterOnQuery={this.filterOnQuery}/>;
 
     }
     return (
@@ -170,6 +177,7 @@ filterOnQuery = event => {
           <Map
           {...this.state}
           handleMarkerClick={this.handleMarkerClick}
+          filterOnQuery={this.filterOnQuery}
           click={this.mapClickHandler}/>
       </div>
     );
