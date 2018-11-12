@@ -1,11 +1,14 @@
-#### Countering Carbon App
+# Countering Carbon Neighborhood React App
 
-### Acknowledgements
-The App represents the final project for the Udacity Grow With Google Front End Nano Degree. It is mostly the work of Thomas Harris but it could not have been completed without the help and support of countless people and countless resources. I will list those more fully below in Colaborations but I wanted to acknowledge here the help of Susan Pommer who has been my Study Buddy over the past months and who has been invaluable in helping complete this project
+### Overview and Acknowledgements
+The Countering Carbon App represents the final project for the Udacity Grow With Google Front End Nano Degree. The requirements and rubric can be found [here](https://review.udacity.com/#!/rubrics/1351/view)
+
+It is mostly the work of Thomas Harris, as partial fullfillment of the FEND requirements. This app could not have been completed without the help and support of countless people and countless resources. A more complete list can be found in the Colaborations section below but I wanted to acknowledge here the help of Susan Pommer who has been my Study Buddy over the past months and who has been invaluable in helping complete this project.
 
 
 ### Instructions to open and use App
-https://github.com/Tom-H2/FEND-my-app-countering-carbon.git
+The project repo can be accessed at [GitHub](https://github.com/Tom-H2/FEND-my-app-countering-carbon.git)
+
 Go to https://github.com/Tom-H2/FEND-my-app-countering-carbon repo in Github
 Clone/download repo and select download
 That action puts a copy of your repo in the computer's download folder
