@@ -14,7 +14,7 @@ class App extends Component {
       markers: [],
       center: [],
       zoom: [12],
-      filtered: null,
+      query: "",
       viewDrawerOpen: false
     };
   }
@@ -95,7 +95,9 @@ venueClickHandler = venue => { //function that connects venue click to call same
   render() { //allows access to the ViewDrawer component and sets state
     let viewDrawer;
     if (this.state.viewDrawerOpen) {
-      viewDrawer = <ViewDrawer {...this.state} venueClickHandler={this.venueClickHandler}/>;
+      viewDrawer = <ViewDrawer {...this.state}
+                    venueClickHandler={this.venueClickHandler}
+                    queryString={this.state.queryString}/>;
 
     }
     return (

@@ -59,15 +59,6 @@
   margin-left: 0.7rem;
 }
 
-.view-drawer button {
-  width: 30%;
-  display: flex;
-  margin-top: 1.5rem;
-  margin-left: 0.7rem;
-  font-size: 1.5rem;
-}
-
-
 .view-drawer a:hover,
 .view-drawer a:active {
   color: green;

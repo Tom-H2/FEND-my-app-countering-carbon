@@ -18,7 +18,7 @@ class VenueList extends Component {
                   className="venue-name"
                   onClick={()=> this.props.venueClickHandler(venue)}
                   key={venue.id}>
-                  <a href="#">{venue.name}</a>
+                  <button>{venue.name}</button>
                 </li>
               )}
             </ol>
