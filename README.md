@@ -58,5 +58,4 @@ The initial vision of this App was a way to choose the carbon output of various 
 
 ## Supported Browsers
 
-By default, the generated project supports all modern browsers.<br>
-Support for Internet Explorer 9, 10, and 11 requires
+By default, the generated project supports all modern browsers.
