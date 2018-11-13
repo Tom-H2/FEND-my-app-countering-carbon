@@ -12,7 +12,7 @@
 }
 
 .toggle-button:focus {
-  outline: blue;
+  background: blue;
 }
 
 .toggle-button_line {
