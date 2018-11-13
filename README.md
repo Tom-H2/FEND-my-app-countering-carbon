@@ -48,7 +48,13 @@ To optimize Countering Carbon:
 
 -- Animation of markers https://www.youtube.com/watch?v=kadSBAsjDXI
 
--- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+-- Aria Roles https://www.w3.org/TR/role-attribute/
+
+-- Error Handling for Async in Google Maps https://discussions.udacity.com/t/handling-google-maps-in-async-and-fallback/34282
+
+-- Tabindex https://developers.google.com/web/fundamentals/accessibility/focus/using-tabindex
+
+-- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 
 
 ## Collaborations
