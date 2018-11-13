@@ -19,6 +19,14 @@ The project repo can be accessed at [GitHub](https://github.com/Tom-H2/FEND-my-a
 - After that is complete, entered "npm start"
 - A new browser window opens program running at location [localhost:3000](http://localhost:3000)
 
+### Service Worker
+- ServiceWorker, included in the index.js file is used in production build only.
+To optimize Countering Carbon:
+  1. Run: `npm run build`
+  2. Deploy: `npm run deploy` to deploy to the address specified  
+- `npm run serve`
+- Local host 5000
+
 ### Use of Countering Carbon
 
 - To find information about any of the venues marked on the map click the marker and that will open an infowindow.
