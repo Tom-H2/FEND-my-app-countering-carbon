@@ -37,7 +37,7 @@ const Helper = {
       requestData
     ).then(res => res.json())
 
-.catch(error => alert.error('Error:', error));
+.catch(error => alert.error('The following error has occurred:', error));
   }
 };
 
