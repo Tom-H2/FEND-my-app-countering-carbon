@@ -18,7 +18,8 @@ class ViewDrawer extends Component {
       <
       nav className = "view-drawer" >
       <
-      input type = "text"
+      input tabIndex="2"
+      type = "text"
       id = "filter"
       placeholder = "Filter Venues"
       onChange = {

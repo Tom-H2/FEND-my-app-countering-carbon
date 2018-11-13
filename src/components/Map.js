@@ -9,12 +9,10 @@ import {
     Marker,
     InfoWindow
 } from "react-google-maps"
-//Loads map and centers map on Port Angeles, Washington.
   const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     <GoogleMap
       defaultZoom={12}
       defaultCenter={{lat: 48.1215, lng: -123.434}}>
-      //carries marker props down from App.js
       {props.markers && props.markers.filter(marker => marker.isVisible).map((marker,id) => {
         const venueInfo = props.filteredVenues.find(venue =>(venue.id ===marker.id))
         return(
@@ -54,7 +52,7 @@ import {
               aria-label="map"
               {...this.props}
               isMarkerShown
-              googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDeiczf4IikLo9sb8zfCtNQPHzHcakh-dg&callback=googleSuccess" onerror="googleError()"
+              googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDeiczf4IikLo9sb8zfCtNQPHzHcakh-dg"
               loadingElement={<div style={{ height: `100%` }} />}
               containerElement={<div style={{ height: `100%` }} />}
               mapElement={<div style={{ height: `100%` }} />}

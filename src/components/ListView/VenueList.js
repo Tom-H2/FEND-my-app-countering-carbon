@@ -25,7 +25,7 @@ class VenueList extends Component {
             venue.id
           } >
           <
-          button > {
+          button tabIndex="3"> {
             venue.name
           } < /button> <
           /li>
