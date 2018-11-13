@@ -3,7 +3,7 @@ import React from 'react';
 import './ViewToggleButton.css';
 
 const viewToggleButton = props => ( <
-  button className = "toggle-button"
+  button  tabindex="1" className = "toggle-button"
   onClick = {
     props.click
   } >
