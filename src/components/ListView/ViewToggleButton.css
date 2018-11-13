@@ -20,3 +20,8 @@
   height: 2px;
   background: white;
 }
+
+.toggel-button:hover,
+.toggle-button:active {
+  background: blue;
+}
